@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+     
+     <h1>Registration Form</h1>
+
+    <form action="/formsave/" method="post">
+        {% csrf_token %}
+    <input type="text" placeholder="Enter Your FirstName:" name="first_name">
+    <br><br>
+    <input type="text" placeholder="Enter Your LastName:" name="last_name">
+    <br><br>
+    <input type="email" placeholder="Enter Your Email:" name="username">
+    <br><br>
+    <input type="password" placeholder="Enter Password:" name="password">
+    <br><br>
+    <button class="btn btn-primary">Register</button>
+
+    </form>
+</body>
+</html>
