@@ -9,13 +9,13 @@ def reg(request):
     return render(request,"reg.html")
 
 def formsave(request):
-    if request.method == "POST":
-        fn = request.POST["first_name"]
-        ln = request.POST["last_name"]
-        un = request.POST["username"]
-        ps = request.POST["password"]
+    if request.method=="POST":
+        fn=request.POST["first_name"]
+        ln=request.POST["last_name"]
+        un=request.POST["username"]
+        ps=request.POST["password"]
 
-        u1 = User.objects.create_user(first_name=fn, last_name=ln,username=un,password=ps)
+        u1=User.objects.create_user(first_name=fn,last_name=ln,username=un,password=ps)
         u1.save()
 
         return HttpResponse("Registration Done Successfully")
@@ -50,9 +50,9 @@ def reset_pass(request):
 
 def reset(request):
     if request.method=="POST":
-        un = request.POST["username"]
-        op = request.POST["old password"]
-        np = request.POST["new password"]
+        un=request.POST["username"]
+        op=request.POST["old_password"]
+        np=request.POST["new_password"]
 
         data=authenticate(username=un,password=op)
 
